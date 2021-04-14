@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.example.demo.entity.Task;
 import com.example.demo.service.TaskService;
 
@@ -42,6 +44,29 @@ public class IndexController {
     	Task task = taskService.findById(id);
         model.addAttribute("task", task);
         return "detail";
+    }
+    
+    /**
+     * Show register display
+     */
+    @GetMapping("/register/index")
+    public String registerIndex(Model model) {
+        return "register";
+    }
+    
+    /**
+     * Register
+     */
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String register(
+    		@RequestParam("title") String title,
+    		@RequestParam("description") String description,
+    		Model model
+    		) 
+    {
+    	// Register
+    	taskService.register(title, description);
+    	return "redirect:/";
     }
 
 }

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>ユーザー情報詳細</title>
+    <link href="/css/add.css" rel="stylesheet"></link>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+  <h1>Task</h1>
+  <form method="post" action="/detail" th:object="${task}">
+  <label>Title:</label><br />
+  <input type="text" th:field="*{title}" class="form-control" aria-describedby="basic-addon2"></input><br />
+  <label>Description:</label><br />
+  <textarea type="text" th:field="*{description}" class="form-control" aria-describedby="basic-addon2"></textarea>
+  </form>
+
+  </body>
+</html>

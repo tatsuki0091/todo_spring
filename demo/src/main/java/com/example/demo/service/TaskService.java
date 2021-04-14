@@ -1,4 +1,5 @@
 package com.example.demo.service;
+import java.util.Date;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,18 @@ public class TaskService {
      */
     public Task findById(Long id) {
       return taskRepository.findById(id).get();
+    }
+    
+    /**
+     * Register Task
+     */
+    public void register(String title, String description) {
+      Date currentDate = new Date();
+      Task task = new Task();
+      task.setTitle(title);
+      task.setDescription(description);
+      task.setCreatedOn(currentDate);
+      taskRepository.save(task);
     }
 
 }
