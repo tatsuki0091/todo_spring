@@ -24,13 +24,5 @@ public class TaskService {
         // Select all
         return taskRepository.findAll();
     }
-    
-    /**
-     * Select task information by id
-     * @return task
-     */
-    public Task findById(Long id) {
-      return taskRepository.findById(id).get();
-    }
 
 }

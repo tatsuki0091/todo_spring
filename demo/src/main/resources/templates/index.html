@@ -14,12 +14,13 @@
                 <th>title</th>
                 <th>Created on</th>
                 <th>Updated on</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="task : ${tasks}" th:object="${task}">
                 <td class="center" th:text="*{id}"></td>
-                <td th:text="*{title}"></td>
+                <td ><a th:text="*{title}" th:href="@{'/detail/' + ${task.id}}"></a></td>
                 <td class="center" th:text="${#dates.format(task.createdOn, 'yyyy/MM/dd')}"></td>
                 <td class="center" th:text="${#dates.format(task.updatedOn, 'yyyy/MM/dd')}"></td>
             </tr>

@@ -20,7 +20,7 @@
         <tbody>
             <tr th:each="task : ${tasks}" th:object="${task}">
                 <td class="center" th:text="*{id}"></td>
-                <td ><a th:text="*{title}" th:href="@{'/detail/' + ${task.id}}"></a></td>
+                <td th:text="*{title}"><a th:href="@{'/customers/edit/' + ${param.id[0]}}"></a></td>
                 <td class="center" th:text="${#dates.format(task.createdOn, 'yyyy/MM/dd')}"></td>
                 <td class="center" th:text="${#dates.format(task.updatedOn, 'yyyy/MM/dd')}"></td>
             </tr>
