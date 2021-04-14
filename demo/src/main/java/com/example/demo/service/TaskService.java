@@ -54,5 +54,18 @@ public class TaskService {
       task.setId(id);
       taskRepository.deleteById(id);
     }
+    
+    /**
+     * Update a Task detail by id
+     */
+    public void update(Long id, String title, String description) {
+      	
+      Date currentDate = new Date();
+      Task task = taskRepository.findById(id).get();;
+      task.setTitle(title);
+      task.setDescription(description);
+      task.setUpdatedOn(currentDate);
+      taskRepository.save(task);
+    }
 
 }

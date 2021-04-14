@@ -11,11 +11,13 @@
 
 <body>
 	<h1>Task</h1>
-	<form method="post" action="/detail" th:object="${task}">
+	<form method="post" action="/update" th:object="${task}">
+	    <input type="hidden" name="id" th:value=*{id} />
 		<label>Title:</label><br />
-		<input type="text" th:field="*{title}" class="form-control" aria-describedby="basic-addon2"></input><br />
+		<input type="text" th:field="*{title}" name="title" class="form-control" aria-describedby="basic-addon2"></input><br />
 		<label>Description:</label><br />
-		<textarea type="text" th:field="*{description}" class="form-control" aria-describedby="basic-addon2"></textarea>
+		<textarea type="text" name="description" th:field="*{description}" class="form-control" aria-describedby="basic-addon2"></textarea>
+		<input type="submit" value="Update" />
 	</form>
 
 </body>

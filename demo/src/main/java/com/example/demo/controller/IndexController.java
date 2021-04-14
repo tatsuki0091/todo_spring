@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.entity.Task;
 import com.example.demo.service.TaskService;
@@ -66,7 +67,7 @@ public class IndexController {
     {
     	// Register
     	taskService.register(title, description);
-    	return "redirect:index";
+    	return "redirect:/";
     }
     
     /**
@@ -78,9 +79,30 @@ public class IndexController {
     		Model model
     		) 
     {
-    	// Register
+    	// Delete
     	taskService.deleteTaskById(id);
-    	return "redirect:index";
+    	return "redirect:/";
+    }
+    
+    /**
+     * Update
+     */
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String update(
+    		@RequestParam("id") Long id,
+    		@RequestParam("title") String title,
+    		@RequestParam("description") String description,
+    		RedirectAttributes redirectAttributes,
+    		Model model
+    		) 
+    {
+    	// Update
+    	taskService.update(id, title, description);
+    	
+    	// Redirect URL with variable
+    	// リダイレクト先に変数を渡すための設定をここでする
+    	redirectAttributes.addAttribute("id", id);
+    	return "redirect:/detail/{id}";
     }
 
 }
