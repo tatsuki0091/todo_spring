@@ -45,5 +45,14 @@ public class TaskService {
       task.setCreatedOn(currentDate);
       taskRepository.save(task);
     }
+    
+    /**
+     * Delete Task by id
+     */
+    public void deleteTaskById(Long id) {
+      Task task = new Task();
+      task.setId(id);
+      taskRepository.deleteById(id);
+    }
 
 }

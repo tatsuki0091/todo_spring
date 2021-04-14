@@ -66,7 +66,21 @@ public class IndexController {
     {
     	// Register
     	taskService.register(title, description);
-    	return "redirect:/";
+    	return "redirect:index";
+    }
+    
+    /**
+     * Delete
+     */
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String delete(
+    		@RequestParam("id") Long id,
+    		Model model
+    		) 
+    {
+    	// Register
+    	taskService.deleteTaskById(id);
+    	return "redirect:index";
     }
 
 }
