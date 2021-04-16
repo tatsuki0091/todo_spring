@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "task")
@@ -17,9 +19,13 @@ public class Task {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+	@NotEmpty(message = "Title may not be empty")
+	@Size(max=100)
     @Column(name = "title")
     private String title;
     
+    @NotEmpty(message = "Description may not be empty")
+    @Size(max=200)
     @Column(name = "description")
     private String description;
     

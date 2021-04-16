@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<div id="parent" th:replace="header">replace</div>
+
+<body>
+	<h1 class="mt-3 register_headline">Register task</h1>
+	<div class="register_form">
+
+		<form method="post" action="/register">
+			<div>
+				<label>Title:</label><br />
+				<input type="text" name="title" class="form-control" aria-describedby="basic-addon2"></input>
+				<span style="color:red;" th:if="${validationError}" th:text="${validationError[0]}"></span><br />
+			</div>
+			<br />
+			<div>
+				<label>Description:</label><br />
+				<textarea type="text" name="description" class="form-control"
+					aria-describedby="basic-addon2"></textarea>
+				<span style="color:red;" th:if="${validationError}" th:text="${validationError[1]}"></span><br />
+			</div>
+			<br />
+			<input class="btn btn-default register_button" type="submit" value="Register" />
+
+		</form>
+	</div>
+
+</body>
+
+</html>

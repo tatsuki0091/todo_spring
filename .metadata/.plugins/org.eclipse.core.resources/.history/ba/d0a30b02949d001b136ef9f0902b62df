@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<div id="parent" th:replace="header">text</div>
+
+<body class="bg-light">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Created on</th>
+      <th scope="col">Updated on</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="task : ${tasks}" th:object="${task}">
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>title</th>
+				<th>Created on</th>
+				<th>Updated on</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="task : ${tasks}" th:object="${task}">
+				<td class="center" th:text="*{id}"></td>
+				<td><a th:text="*{title}" th:href="@{'/detail/' + ${task.id}}"></a></td>
+				<td class="center" th:text="${#dates.format(task.createdOn, 'yyyy/MM/dd')}"></td>
+                <td class="center" th:text="${#dates.format(task.updatedOn, 'yyyy/MM/dd')}"></td>
+                <td class="center">
+                <form method="post" action="/delete" >
+                <input type="hidden" name="id" th:value="*{id}" />
+                <input type="submit" value="Delete" />
+                </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary"><a th:text="Register" th:href="@{'/register/index'}"></a></button>
+  </body>
+</html>

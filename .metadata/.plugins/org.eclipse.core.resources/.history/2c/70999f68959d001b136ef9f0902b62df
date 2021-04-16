@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<div id="parent" th:replace="header">text</div>
+	<body class="bg-light">
+    	<button type="button" class="btn btn-primary"><a th:text="Register" th:href="@{'/register/index'}"></a></button>
+  	</body>
+</html>

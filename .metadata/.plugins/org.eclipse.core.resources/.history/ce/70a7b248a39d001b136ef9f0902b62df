@@ -1,0 +1,11 @@
+.headline {
+	color: white;
+}
+
+.header_button {
+	float:right;
+}
+
+.heder_link {
+	color: black;
+}

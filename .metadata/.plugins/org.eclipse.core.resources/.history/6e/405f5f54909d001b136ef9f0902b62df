@@ -1,0 +1,17 @@
+<head>
+	<title>Top</title>
+	<meta charset="utf-8" />
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
+	<link th:href="@{/css/common.css}" rel="stylesheet" type="text/css">
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<header>
+	<nav class="navbar navbar-expand-lg navbar-srk bg-dark　justify-content-center :">
+		<div class="fe">
+			<h1 class="justify-content-center headline">Task list</h1>
+		</div>
+	</nav>
+</header>

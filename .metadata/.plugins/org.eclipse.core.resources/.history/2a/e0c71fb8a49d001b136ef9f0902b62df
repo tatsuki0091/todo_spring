@@ -1,0 +1,11 @@
+.header_font_color {
+	color: white;
+}
+
+.header_button {
+	float:right;
+}
+
+.heder_link {
+	color: black;
+}

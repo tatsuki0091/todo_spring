@@ -1,0 +1,7 @@
+.headline {
+	color: white;
+}
+
+.header_button {
+	float:right;
+}

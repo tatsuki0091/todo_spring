@@ -1,0 +1,7 @@
+.headline {
+	color: white;
+}
+
+.fe {
+	text-align: center;
+}

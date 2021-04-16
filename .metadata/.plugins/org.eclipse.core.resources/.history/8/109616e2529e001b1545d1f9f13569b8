@@ -1,0 +1,23 @@
+.header_font_color {
+	color: white;
+}
+
+.header_button {
+	float:right;
+}
+
+.heder_link {
+	color: black;
+}
+
+.register_form {
+	margin: 50px;
+}
+
+.register_headline {
+	text-align: center;
+}
+
+.register_button {
+	width: 100%;
+}
