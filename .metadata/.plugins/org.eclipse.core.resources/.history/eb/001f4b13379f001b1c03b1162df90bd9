@@ -1,0 +1,10 @@
+$(document).ready( function(){
+	$path = location.pathname
+	if($path === '/') {
+		$( ".control-display-register" ).show()
+	} elseif($path === '/register/index') {
+		$( ".control-display-register" ).show()
+	}
+	alert($path)
+	
+});

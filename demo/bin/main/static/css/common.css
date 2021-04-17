@@ -2,6 +2,10 @@
 	color: white;
 }
 
+.left {
+	margin-left: 20px;
+}
+
 .header_button {
 	float:right;
 }
@@ -21,3 +25,4 @@
 .function_button {
 	width: 100%;
 }
+

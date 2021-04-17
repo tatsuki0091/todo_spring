@@ -1,0 +1,8 @@
+$(document).ready( function(){
+	$path = location.pathname
+	if($path === '/') {
+		//$(".control-display-register").show();
+	}
+	alert($path)
+	
+});

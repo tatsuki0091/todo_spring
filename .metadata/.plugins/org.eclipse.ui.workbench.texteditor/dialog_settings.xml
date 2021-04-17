@@ -4,7 +4,10 @@
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="header_font_"/>
 		<list key="findhistory">
+			<item value="header_font_"/>
+			<item value="header_font_color"/>
 		</list>
 		<list key="replacehistory">
 		</list>

@@ -1,0 +1,21 @@
+<head>
+	<title>TODO</title>
+	<meta charset="utf-8" />
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
+	
+	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	<link th:href="@{/css/common.css}" rel="stylesheet" type="text/css">
+	<script th:src="@{/js/common.js}"></script>
+
+</head>
+<header>
+	<nav class="navbar navbar-expand-lg navbar-srk bg-dark">
+		<div class="ml-auto mr-auto ml-2">
+			<h1 class="header_font_color">TODO Application</h1>
+		</div>
+		<a  class="control-display-register header_font_color" th:style="'display:none;'" th:href="@{'/register/index'}">Register</a>
+		<a  class="control-display-list header_font_color left" th:style="'display:none;'" th:href="@{'/'}">List</a>
+	</nav>
+</header>

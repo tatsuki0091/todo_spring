@@ -38,6 +38,8 @@ public class IndexController {
 	public String index(Model model) {
 		List<Task> tasks = taskService.selectAll();
 		model.addAttribute("tasks", tasks);
+		// header部分の表示するリンクの設定
+		model.addAttribute("link", "register");
 		return "index";
 
 	}
